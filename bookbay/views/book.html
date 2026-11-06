@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book details – BookBay</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/book.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container page">
+    <p><a href="/">← Back to all books</a></p>
+    <div id="page-message" class="hidden"></div>
+    <div id="book-detail"><p class="muted">Loading...</p></div>
+
+    <section id="other-copies-section" class="page hidden">
+      <h2>Other copies of this book</h2>
+      <div class="table-wrap panel">
+        <table>
+          <thead>
+            <tr><th>Condition</th><th>Condition note</th><th>Price</th><th>Availability</th><th></th></tr>
+          </thead>
+          <tbody id="other-copies"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">BookBay · KH5041CMD coursework project · Book covers from Open Library</div>
+  </footer>
+</body>
+</html>

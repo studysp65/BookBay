@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in – BookBay</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/auth.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container page">
+    <div class="panel narrow">
+      <h1>Log in</h1>
+      <p class="muted">Customers and admins both log in here.</p>
+      <div id="form-message" class="hidden"></div>
+      <form id="login-form" class="form" novalidate>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn btn-block">Log in</button>
+      </form>
+      <p class="small">New to BookBay? <a href="/register">Create an account</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">BookBay · KH5041CMD coursework project</div>
+  </footer>
+</body>
+</html>

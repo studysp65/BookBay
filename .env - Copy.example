@@ -1,0 +1,33 @@
+# Copy this file to ".env" and fill in your own values.
+# Never commit the real .env file to GitHub.
+
+# --- Server ---
+PORT=3000
+NODE_ENV=development
+
+# --- HTTPS (see README "Running with HTTPS") ---
+USE_HTTPS=false
+HTTPS_PORT=3443
+SSL_KEY_PATH=./certs/key.pem
+SSL_CERT_PATH=./certs/cert.pem
+
+# --- MySQL database ---
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+# Keep this as "bookbay" (database/schema.sql creates a database with that name)
+DB_NAME=bookbay
+# Set to true when using a cloud MySQL database that needs SSL
+DB_SSL=false
+
+# --- Login tokens ---
+# Use a long random string. You can make one with:
+# node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+JWT_SECRET=replace_this_with_a_long_random_secret
+JWT_EXPIRES_IN=2h
+COOKIE_MAX_AGE_HOURS=2
+
+# --- Mock payment ---
+# How long the fake payment "takes", in milliseconds
+PAYMENT_DELAY_MS=800

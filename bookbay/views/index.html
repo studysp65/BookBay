@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BookBay – New and used books</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/home.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>New and used books, graded honestly.</h1>
+      <p>Every used copy has its own condition grade, price and note, so you know exactly what you're getting.</p>
+    </section>
+
+    <form id="filter-form" class="filters" role="search">
+      <div class="search-field">
+        <label for="q">Search</label>
+        <input type="search" id="q" name="q" placeholder="Title or author" maxlength="100">
+      </div>
+      <div>
+        <label for="genre">Genre</label>
+        <select id="genre" name="genre">
+          <option value="">All genres</option>
+        </select>
+      </div>
+      <div>
+        <label for="author">Author</label>
+        <select id="author" name="author">
+          <option value="">All authors</option>
+        </select>
+      </div>
+      <div>
+        <label for="condition">Condition</label>
+        <select id="condition" name="condition">
+          <option value="">New and used</option>
+          <option value="new">New only</option>
+          <option value="used">Used only (any grade)</option>
+          <option value="Like New">Used – Like New</option>
+          <option value="Very Good">Used – Very Good</option>
+          <option value="Good">Used – Good</option>
+          <option value="Acceptable">Used – Acceptable</option>
+        </select>
+      </div>
+      <div>
+        <label>Price (EGP)</label>
+        <div class="price-range">
+          <input type="number" id="minPrice" name="minPrice" placeholder="Min" min="0" step="1" aria-label="Minimum price">
+          <input type="number" id="maxPrice" name="maxPrice" placeholder="Max" min="0" step="1" aria-label="Maximum price">
+        </div>
+      </div>
+      <div class="filter-actions">
+        <button type="submit" class="btn">Search</button>
+        <button type="button" class="btn btn-outline" id="reset-filters">Reset</button>
+      </div>
+    </form>
+
+    <div id="page-message" class="hidden"></div>
+
+    <div class="results-bar">
+      <p id="results-info" class="muted">Loading books...</p>
+      <div>
+        <label for="sort" class="hidden">Sort by</label>
+        <select id="sort" name="sort" form="filter-form" aria-label="Sort by">
+          <option value="newest">Newest first</option>
+          <option value="price_asc">Price: low to high</option>
+          <option value="price_desc">Price: high to low</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="book-grid" class="book-grid"></div>
+
+    <div id="pagination" class="pagination"></div>
+
+    <section id="recent-section" class="recent-strip page hidden">
+      <h2>Recently viewed</h2>
+      <div id="recent-grid" class="book-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">BookBay · KH5041CMD coursework project · Book covers from Open Library</div>
+  </footer>
+</body>
+</html>

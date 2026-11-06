@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create an account – BookBay</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/auth.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container page">
+    <div class="panel narrow">
+      <h1>Create an account</h1>
+      <div id="form-message" class="hidden"></div>
+      <form id="register-form" class="form" novalidate>
+        <div>
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="password">Password
+            <span class="hint">At least 8 characters with an uppercase letter, a lowercase letter, a number and a symbol.</span>
+          </label>
+          <input type="password" id="password" name="password" autocomplete="new-password" required>
+        </div>
+        <div>
+          <label for="confirmPassword">Confirm password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password" required>
+        </div>
+        <button type="submit" class="btn btn-block">Sign up</button>
+      </form>
+      <p class="small">Already have an account? <a href="/login">Log in</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">BookBay · KH5041CMD coursework project</div>
+  </footer>
+</body>
+</html>

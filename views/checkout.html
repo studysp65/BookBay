@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout – BookBay</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/checkout.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container page">
+    <h1>Checkout</h1>
+    <div id="page-message" class="hidden"></div>
+
+    <!-- Step 1: order summary and delivery address -->
+    <section id="step-address" class="checkout-grid hidden">
+      <div class="panel">
+        <h2>1. Delivery address</h2>
+        <div id="address-message" class="hidden"></div>
+        <form id="address-form" class="form" novalidate>
+          <div>
+            <label for="address">Address <span class="hint">Street, building, area and city</span></label>
+            <textarea id="address" name="address" maxlength="500" required></textarea>
+          </div>
+          <button type="submit" class="btn">Continue to payment</button>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Order summary</h2>
+        <ul id="summary-items" class="summary-list"></ul>
+        <div class="summary-total"><span>Total</span><span id="summary-total"></span></div>
+        <p class="small muted">Prices are checked again on the server when you continue.</p>
+      </div>
+    </section>
+
+    <!-- Step 2: mock payment -->
+    <section id="step-payment" class="checkout-grid hidden">
+      <div class="panel">
+        <h2>2. Payment</h2>
+        <p>Order <strong id="payment-order-number"></strong> · Total <strong id="payment-total"></strong></p>
+        <div id="payment-message" class="hidden"></div>
+        <form id="payment-form" class="form" novalidate autocomplete="off">
+          <div>
+            <label for="cardName">Name on card</label>
+            <input type="text" id="cardName" name="cardName" autocomplete="cc-name" maxlength="100" required>
+          </div>
+          <div>
+            <label for="cardNumber">Card number</label>
+            <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" autocomplete="cc-number" maxlength="23" placeholder="4242 4242 4242 4242" required>
+          </div>
+          <div class="form-row">
+            <div>
+              <label for="expiry">Expiry (MM/YY)</label>
+              <input type="text" id="expiry" name="expiry" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="12/29" required>
+            </div>
+            <div>
+              <label for="cvv">CVV</label>
+              <input type="password" id="cvv" name="cvv" inputmode="numeric" autocomplete="cc-csc" maxlength="4" required>
+            </div>
+          </div>
+          <button type="submit" class="btn">Pay now</button>
+        </form>
+      </div>
+      <div class="panel test-cards">
+        <h2>Test payment</h2>
+        <p>This is a simulated payment. No money is taken.</p>
+        <p>Successful payment: <code>4242 4242 4242 4242</code></p>
+        <p>Declined payment: <code>4000 0000 0000 0002</code></p>
+        <p>Use any future expiry date and any 3-digit CVV.</p>
+        <p class="muted">BookBay never stores your card number or CVV. Only the last 4 digits and the payment reference are saved.</p>
+      </div>
+    </section>
+
+    <!-- Step 3a: success -->
+    <section id="step-done" class="panel medium hidden">
+      <h2>Thank you! Your order is confirmed.</h2>
+      <p>Order number: <strong id="done-order-number"></strong></p>
+      <p>Payment reference: <strong id="done-payment-ref"></strong> (card ending <span id="done-last4"></span>)</p>
+      <p>Total paid: <strong id="done-total"></strong></p>
+      <p>
+        <a class="btn" id="track-link" href="/orders">Track my order</a>
+        <a class="btn btn-outline" href="/">Continue shopping</a>
+      </p>
+    </section>
+
+    <!-- Step 3b: payment failed -->
+    <section id="step-failed" class="panel medium hidden">
+      <h2>Payment failed</h2>
+      <div id="failed-message" class="message message--error"></div>
+      <p>Your order was cancelled and the books were put back in stock. Your cart has been kept.</p>
+      <p>
+        <button type="button" class="btn" id="try-again">Try again</button>
+        <a class="btn btn-outline" href="/cart">Back to cart</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">BookBay · KH5041CMD coursework project</div>
+  </footer>
+</body>
+</html>

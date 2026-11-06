@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="300" viewBox="0 0 200 300">
+  <rect width="200" height="300" fill="#efe9df"/>
+  <rect x="18" y="18" width="164" height="264" fill="none" stroke="#cfc7ba" stroke-width="2"/>
+  <path d="M70 120h60v76H70z" fill="none" stroke="#9aa3a6" stroke-width="4"/>
+  <path d="M100 120v76" stroke="#9aa3a6" stroke-width="4"/>
+  <text x="100" y="236" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#5f6b6f">No cover</text>
+</svg>

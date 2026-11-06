@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Track order – BookBay</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Socket.IO client, served automatically by the Socket.IO server -->
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/order.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container page">
+    <p><a href="/orders">← All my orders</a></p>
+    <div id="page-message" class="hidden"></div>
+
+    <div id="order-view" class="hidden">
+      <div class="order-head">
+        <div>
+          <h1 id="order-title">Order</h1>
+          <p class="muted" id="order-date"></p>
+        </div>
+        <span class="live" id="live-status">Connecting...</span>
+      </div>
+
+      <section class="panel" id="timeline-panel">
+        <h2>Order status</h2>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+
+      <section class="panel">
+        <h2>Books in this order</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Book</th><th>Condition</th><th>Price</th><th>Qty</th><th>Subtotal</th></tr></thead>
+            <tbody id="order-items"></tbody>
+          </table>
+        </div>
+        <div class="totals"><span class="grand-total" id="order-total"></span></div>
+      </section>
+
+      <section class="panel">
+        <dl class="details-grid" id="order-details"></dl>
+      </section>
+
+      <section class="panel">
+        <h2>History</h2>
+        <ul class="history" id="order-history"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">BookBay · KH5041CMD coursework project</div>
+  </footer>
+</body>
+</html>

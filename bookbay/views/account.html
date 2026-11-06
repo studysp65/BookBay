@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My account – BookBay</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/api.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/account.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container page">
+    <div class="panel medium">
+      <h1>My account</h1>
+      <p class="muted" id="account-info"></p>
+      <div id="form-message" class="hidden"></div>
+
+      <form id="account-form" class="form" novalidate>
+        <div class="form-row">
+          <div>
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div>
+          <label for="address">Delivery address</label>
+          <textarea id="address" name="address" maxlength="500" autocomplete="street-address" placeholder="Street, building, area, city"></textarea>
+        </div>
+
+        <fieldset>
+          <legend>Change password <span class="hint">(leave empty to keep your current password)</span></legend>
+          <div class="form-row">
+            <div>
+              <label for="newPassword">New password</label>
+              <input type="password" id="newPassword" name="newPassword" autocomplete="new-password">
+            </div>
+            <div>
+              <label for="confirmPassword">Confirm new password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" autocomplete="new-password">
+            </div>
+          </div>
+        </fieldset>
+
+        <div>
+          <label for="currentPassword">Current password
+            <span class="hint">Needed only if you change your email or password.</span>
+          </label>
+          <input type="password" id="currentPassword" name="currentPassword" autocomplete="current-password">
+        </div>
+
+        <button type="submit" class="btn">Save changes</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">BookBay · KH5041CMD coursework project</div>
+  </footer>
+</body>
+</html>

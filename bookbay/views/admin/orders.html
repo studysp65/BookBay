@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manage orders – BookBay Admin</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/js/api.js" defer></script>
+  <script src="/js/nav.js" defer></script>
+  <script src="/js/admin-orders.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+
+  <main class="container page">
+    <div class="order-head">
+      <h1>Manage orders</h1>
+      <span class="live" id="live-status">Connecting...</span>
+    </div>
+    <div id="page-message" class="hidden"></div>
+
+    <div class="admin-toolbar">
+      <div>
+        <label for="status-filter">Show</label>
+        <select id="status-filter">
+          <option value="">All orders</option>
+          <option value="pending">Pending</option>
+          <option value="paid">Paid</option>
+          <option value="processing">Processing</option>
+          <option value="shipped">Shipped</option>
+          <option value="delivered">Delivered</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="admin-layout">
+      <div class="table-wrap panel">
+        <table>
+          <thead>
+            <tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th><th>Payment</th><th></th></tr>
+          </thead>
+          <tbody id="orders-table"></tbody>
+        </table>
+      </div>
+
+      <section id="order-detail" class="panel">
+        <p class="muted">Select an order to see its details and change its status.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">BookBay Admin</div>
+  </footer>
+</body>
+</html>
